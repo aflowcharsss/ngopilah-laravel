@@ -14,4 +14,9 @@ class Customer extends Model
     protected $fillable = [
         'name', 'contact', 'email', 'address', 'discount', 'discount_type', 'identity'
     ];
+
+    public function sale()
+    {
+        return $this->belongsTo('App\Models\Sale');
+    }
 }

@@ -14,4 +14,9 @@ class Item extends Model
     protected $fillable = [
         'name', 'type', 'stock', 'price', 'photo'
     ];
+
+    public function sale()
+    {
+        return $this->belongsTo('App\Models\Sale');
+    }
 }
