@@ -29,7 +29,7 @@ class CreateSalesTable extends Migration
             $table->date('transaction_date');
             $table->integer('quantity');
             $table->integer('total_discount');
-            $table->integer('total_priice');
+            $table->integer('total_price');
             $table->integer('total_checkout');
             $table->foreignId('item_id')->constrained('items')->onDelete('cascade');
             $table->foreignId('customer_id')->constrained('customers')->onDelete('cascade');
