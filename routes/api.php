@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,3 +26,6 @@ Route::post('products/create', [ProductController::class, 'create']);
 Route::get('products/show/{id}', [ProductController::class, 'show']);
 Route::patch('products/update/{id}', [ProductController::class, 'update']);
 Route::delete('products/destroy/{id}', [ProductController::class, 'destroy']);
+
+
+Route::get('items', [ItemController::class, 'index']);
