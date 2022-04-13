@@ -49,6 +49,7 @@ Route::delete('customers/delete/{id}', [CustomerController::class, 'destroy']);
  * Sales
  */
 Route::get('sales', [SaleController::class, 'index']);
+Route::get('sales/show/{id}', [SaleController::class, 'show']);
 Route::post('sales/create', [SaleController::class, 'create']);
 Route::patch('sales/update/{id}', [SaleController::class, 'update']);
 Route::delete('sales/delete/{id}', [SaleController::class, 'destroy']);

@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Customer;
+use App\Models\Item;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -13,17 +15,17 @@ class Sale extends Model
 
     protected $fillable = [
         'transaction_code', 'transaction_date', 'quantity', 
-        'total_discount', 'total_price', 'total_checkout', 
+        'total_discount', 'total_price', 'total_checkout',
         'item_id', 'customer_id',
     ];
 
-    public function items()
+    public function item()
     {
-        return $this->hasMany('App\Models\Item')->order_by('id', 'ASC');
+        return $this->hasOne('App\Models\Item', 'id', 'item_id')->orderBy('id', 'ASC');
     }
 
-    public function customers()
+    public function customer()
     {
-        return $this->hasMany('App\Models\Customer')->order_by('id', 'ASC');
+        return $this->hasOne('App\Models\Customer', 'id', 'customer_id')->orderBy('id', 'ASC');
     }
 }
